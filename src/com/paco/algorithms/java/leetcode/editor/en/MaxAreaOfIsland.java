@@ -30,16 +30,16 @@ public class MaxAreaOfIsland {
 
         private int getMaxArea(int i, int q, int[][] grid) {
             grid[i][q] = 2;
-            int a = 0, b = 0, c = 0, d = 0;
+            int a = 1;
             if (i + 1 < n1 && grid[i + 1][q] == 1)
-                a = getMaxArea(i + 1, q, grid);
+                a += getMaxArea(i + 1, q, grid);
             if (i - 1 >= 0 && grid[i - 1][q] == 1)
-                b = getMaxArea(i - 1, q, grid);
+                a += getMaxArea(i - 1, q, grid);
             if (q + 1 < n2 && grid[i][q + 1] == 1)
-                c = getMaxArea(i, q + 1, grid);
+                a += getMaxArea(i, q + 1, grid);
             if (q - 1 >= 0 && grid[i][q - 1] == 1)
-                d = getMaxArea(i, q - 1, grid);
-            return a + b + c + d + 1;
+                a += getMaxArea(i, q - 1, grid);
+            return a;
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)
