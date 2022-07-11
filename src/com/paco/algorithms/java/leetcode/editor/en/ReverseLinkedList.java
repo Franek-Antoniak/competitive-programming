@@ -60,9 +60,9 @@ public class ReverseLinkedList {
  * }
  */
 class Solution {
-    public ListNode reverseList(ListNode head) {
-        
-    }
+//    public ListNode reverseList(ListNode head) {
+//
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

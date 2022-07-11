@@ -45,9 +45,9 @@ package com.paco.algorithms.java.leetcode.editor.en;
 public class Zero1Matrix {
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int[][] updateMatrix(int[][] mat) {
-        
-    }
+//    public int[][] updateMatrix(int[][] mat) {
+//
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

@@ -63,9 +63,9 @@ public class MergeTwoBinaryTrees {
  * }
  */
 class Solution {
-    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        
-    }
+//    public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
+//
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

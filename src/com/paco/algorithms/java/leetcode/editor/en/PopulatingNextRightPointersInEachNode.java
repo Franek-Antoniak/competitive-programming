@@ -89,9 +89,9 @@ class Node {
 */
 
 class Solution {
-    public Node connect(Node root) {
-        
-    }
+//    public Node connect(Node root) {
+//
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

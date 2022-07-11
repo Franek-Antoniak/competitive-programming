@@ -61,9 +61,9 @@ public class MergeTwoSortedLists {
  * }
  */
 class Solution {
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        
-    }
+//    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+//
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

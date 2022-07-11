@@ -10,38 +10,31 @@ package com.paco.algorithms.java.leetcode.editor.en;
 public class PermutationInString {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
         public boolean checkInclusion(String s1, String s2) {
-            int[] countArr = new int[255];
+            int[] countArr = new int[26];
+            int x;
             s1.chars()
-                    .forEach(ch -> countArr[ch]++);
+                    .forEach(ch -> countArr[ch - 'a']++);
             if (s1.length() > s2.length())
                 return false;
             // Sliding Window
             int start = 0, toAchieve = s1.length(), tempAchieved = 0;
             for (int i = 0; i < s2.length(); i++) {
-                if (tempAchieved == 0)
-                    start = i;
-                if (countArr[s2.charAt(i)] >= 1) {
+                x = s2.charAt(i) - 'a';
+                if (countArr[x] > 0) {
                     tempAchieved++;
-                    countArr[s2.charAt(i)]--;
-                    if (tempAchieved == toAchieve)
-                        return true;
-                } else {
-                    if (start == i)
-                        start++;
-                    for (; start < i; start++) {
-                        countArr[s2.charAt(start)]++;
-                        if (countArr[s2.charAt(i)] == 1) {
-                            start++;
-                            countArr[s2.charAt(i)]--;
-                            break;
-                        }
+                }
+                countArr[x]--;
+                if (i >= s1.length())
+                    if (++countArr[s2.charAt(start++) - 'a'] > 0)
                         tempAchieved--;
-                    }
+                if (tempAchieved == toAchieve) {
+                    return true;
                 }
             }
             return false;
         }
     }
-    //leetcode submit region end(Prohibit modification and deletion)
+//leetcode submit region end(Prohibit modification and deletion)
 }
