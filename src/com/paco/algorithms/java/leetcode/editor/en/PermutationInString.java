@@ -24,7 +24,7 @@ public class PermutationInString {
                 x = s2.charAt(i) - 'a';
                 if (countArr[x] > 0) {
                     tempAchieved++;
-                }
+            }
                 countArr[x]--;
                 if (i >= s1.length())
                     if (++countArr[s2.charAt(start++) - 'a'] > 0)
