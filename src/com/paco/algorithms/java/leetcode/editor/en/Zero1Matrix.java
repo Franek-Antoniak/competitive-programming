@@ -1,10 +1,10 @@
 /**
-Solved by Paco
-Date: 2022-07-08 17:14:04
-Exercise number: 542
-Title: 01-matrix
-Proramming Language: Java
-*/
+ * Solved by Paco
+ * Date: 2022-07-08 17:14:04
+ * Exercise number: 542
+ * Title: 01-matrix
+ * Proramming Language: Java
+ */
 
 //Given an m x n binary matrix mat, return the distance of the nearest 0 for 
 //each cell. 
@@ -42,13 +42,22 @@ Proramming Language: Java
 
 package com.paco.algorithms.java.leetcode.editor.en;
 
+import java.util.Arrays;
+
 public class Zero1Matrix {
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-//    public int[][] updateMatrix(int[][] mat) {
-//
-//    }
-}
-//leetcode submit region end(Prohibit modification and deletion)
+
+/*    public static void main(String[] args) {
+        int[][] mat = {{1, 1, 1}, {1, 1, 1}, {1, 1, 0}};
+        int[][] res = new Zero1Matrix().new Solution().updateMatrix(mat);
+        System.out.println(Arrays.deepToString(res));
+    }
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public int[][] updateMatrix(int[][] mat) {
+            return mat;
+        }
+    }
+    //leetcode submit region end(Prohibit modification and deletion)*/
 
 }
