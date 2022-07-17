@@ -62,11 +62,11 @@ package com.paco.algorithms.java.leetcode.editor.en;
 
 public class RottingOranges {
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+//class Solution {
 //    public int orangesRotting(int[][] grid) {
 //
 //    }
-}
+//}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
