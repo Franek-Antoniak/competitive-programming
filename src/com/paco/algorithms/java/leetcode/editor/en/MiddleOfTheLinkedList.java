@@ -3,6 +3,7 @@
  * Date: 2022-07-02 19:51:01
  * Exercise number: 876
  * Title: middle-of-the-linked-list
+ * Programming Language: Java
  */
 
 // Import libraries with LinkedList ListNode class

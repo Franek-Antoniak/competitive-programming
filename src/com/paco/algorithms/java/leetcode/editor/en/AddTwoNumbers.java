@@ -3,7 +3,7 @@
  * Date: 2022-07-14 23:06:45
  * Exercise number: 2
  * Title: add-two-numbers
- * Proramming Language: Java
+ * Programming Language: Java
  */
 
 package com.paco.algorithms.java.leetcode.editor.en;

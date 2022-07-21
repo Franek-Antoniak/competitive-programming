@@ -3,7 +3,7 @@
  * Date: 2022-07-19 08:05:42
  * Exercise number: 9
  * Title: palindrome-number
- * Proramming Language: Java
+ * Programming Language: Java
  */
 
 package com.paco.algorithms.java.leetcode.editor.en;

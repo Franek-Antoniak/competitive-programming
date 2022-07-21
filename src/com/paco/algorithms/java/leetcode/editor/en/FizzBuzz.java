@@ -3,7 +3,7 @@
  * Date: 2022-07-18 23:45:59
  * Exercise number: 412
  * Title: fizz-buzz
- * Proramming Language: Java
+ * Programming Language: Java
  */
 
 package com.paco.algorithms.java.leetcode.editor.en;

@@ -3,6 +3,7 @@
  * Date: 2022-07-05 20:05:59
  * Exercise number: 567
  * Title: permutation-in-string
+ * Programming Language: Java
  */
 
 package com.paco.algorithms.java.leetcode.editor.en;
@@ -24,7 +25,7 @@ public class PermutationInString {
                 x = s2.charAt(i) - 'a';
                 if (countArr[x] > 0) {
                     tempAchieved++;
-            }
+                }
                 countArr[x]--;
                 if (i >= s1.length())
                     if (++countArr[s2.charAt(start++) - 'a'] > 0)

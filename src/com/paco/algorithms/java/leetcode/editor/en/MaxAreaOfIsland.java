@@ -3,7 +3,7 @@
  * Date: 2022-07-08 17:12:37
  * Exercise number: 695
  * Title: max-area-of-island
- * Proramming Language: Java
+ * Programming Language: Java
  */
 
 

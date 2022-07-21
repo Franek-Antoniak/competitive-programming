@@ -3,6 +3,7 @@
  * Date: 2022-07-04 12:12:05
  * Exercise number: 3
  * Title: longest-substring-without-repeating-characters
+ * Programming Language: Java
  */
 
 package com.paco.algorithms.java.leetcode.editor.en;
