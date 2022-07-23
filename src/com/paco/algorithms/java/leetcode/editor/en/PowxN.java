@@ -14,18 +14,20 @@ public class PowxN {
         public double myPow(double x, int n) {
             if (x == 1)
                 return 1;
-            if (n < 0)
-                return 1 / (fastPow(x, -n));
+            if (n < 0) {
+                return 1 / (fastPow(x, -(long) n));
+            }
             return fastPow(x, n);
         }
 
-        public double fastPow(double x, int n) {
+        public double fastPow(double x, long n) {
             if (n == 0)
                 return 1;
-            double result = fastPow(x, n / 2);
-            if (n % 2 == 0)
+            if (n % 2 == 0) {
+                double result = fastPow(x, n / 2);
                 return result * result;
-            return result * result * x;
+            }
+            return x * fastPow(x, n - 1);
         }
     }
     //leetcode submit region end(Prohibit modification and deletion)
