@@ -22,6 +22,6 @@ public class FactorialTrailingZeroes {
             return counter;
         }
     }
-//leetcode submit region end(Prohibit modification and deletion)
+    //leetcode submit region end(Prohibit modification and deletion)
 
 }
