@@ -8,22 +8,12 @@
 
 package com.paco.algorithms.java.leetcode.editor.en;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-
 public class Zero1Matrix {
 
-    class Pair {
-        int x, y;
 
-        Pair(int x, int y) {
-            this.x = x;
-            this.y = y;
-        }
-    }
-
+/*
     class BFSSolution {
+
         public int[][] updateMatrix(int[][] mat) {
             int rows = mat.length;
             if (rows == 0) return mat;
@@ -60,7 +50,17 @@ public class Zero1Matrix {
             }
             return dist;
         }
+
+        class Pair {
+            int x, y;
+
+            Pair(int x, int y) {
+                this.x = x;
+                this.y = y;
+            }
+        }
     }
+*/
 
     //leetcode submit region begin(Prohibit modification and deletion)
 
