@@ -30,6 +30,7 @@ public class DecodeString {
                     int result = 0;
                     for (; index < s.length() && Character.isDigit(chars[index]); index++)
                         result = result * 10 + (chars[index] - '0');
+                    index--;
                     numStack.push(result);
                 } else if (chars[index] == '[') {
                     strStack.push(stringBuilder.toString());
