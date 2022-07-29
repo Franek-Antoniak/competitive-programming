@@ -11,13 +11,6 @@ package com.paco.algorithms.java.leetcode.editor.en;
 import java.util.Stack;
 
 public class DecodeString {
-
-    // Main method
-    public static void main(String[] args) {
-        Solution solution = new DecodeString().new Solution();
-        System.out.println(solution.decodeString("3[z]2[2[y]pq4[2[jk]e1[f]]]ef"));
-    }
-
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public String decodeString(String s) {
