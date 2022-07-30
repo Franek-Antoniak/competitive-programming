@@ -1,4 +1,4 @@
-package com.paco.java.algorithms.text.trie;
+package com.paco.java.structures.trie;
 
 import java.util.HashMap;
 
