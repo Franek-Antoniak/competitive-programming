@@ -12,27 +12,17 @@ import java.util.*;
 
 public class WordBreak {
 
-    // Main method
-    public static void main(String[] args) {
-        WordBreak wb = new WordBreak();
-        String s = "catsandog";
-        List<String> dict = List.of("cat", "cats", "and", "sand", "dog");
-        boolean result = wb.new Solution().wordBreak(s, dict);
-        System.out.println(result);
-    }
-
-
     /**
      * Solution 1:
      * Recursive Solution with Memoization
      * Time Complexity:
-     * Average Case: O(n^2),  The Worst Case: O(n^3) with the HashSet
+     * Average Case: O(n^3),  The Worst Case: O(n^4) with the HashSet
      * Space Complexity: O(n)
-     * The Worst Case & Average Case with TreeSet: O(n^2 * log(n))  with the HashSet
+     * The Worst Case & Average Case with TreeSet: O(n^3 * log(n)) with the TreeSet
      */
     public class RecursiveSolution {
         public boolean wordBreak(String s, List<String> wordDict) {
-            return wordBreakMemo(s, new TreeSet<>(wordDict), 0, new Boolean[s.length()]);
+            return wordBreakMemo(s, new HashSet<>(wordDict), 0, new Boolean[s.length()]);
         }
 
         private boolean wordBreakMemo(String s, Set<String> wordDict, int start, Boolean[] memo) {
@@ -51,9 +41,14 @@ public class WordBreak {
         }
     }
 
-
-    //leetcode submit region begin(Prohibit modification and deletion)
-    public class Solution {
+    /**
+     * Solution 2:
+     * BFS Solution
+     * Time Complexity:
+     * O(n^3 * log(n))
+     * Space Complexity: O(n)
+     */
+    public class BFSSolution {
         public boolean wordBreak(String s, List<String> wordDict) {
             Set<String> wordDictSet = new HashSet<>(wordDict);
             Queue<Integer> queue = new LinkedList<>();
@@ -77,6 +72,10 @@ public class WordBreak {
             return false;
         }
     }
+
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+
     //leetcode submit region end(Prohibit modification and deletion)
 
 }
