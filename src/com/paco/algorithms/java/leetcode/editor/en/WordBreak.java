@@ -18,7 +18,7 @@ public class WordBreak {
      * Time Complexity:
      * Average Case: O(n^3),  The Worst Case: O(n^4) with the HashSet
      * Space Complexity: O(n)
-     * The Worst Case & Average Case with TreeSet: O(n^3 * log(n)) with the TreeSet
+     * The Worst Case & Average Case with TreeSet: O(n^3 * log(n)
      */
     public class RecursiveSolution {
         public boolean wordBreak(String s, List<String> wordDict) {
@@ -73,6 +73,28 @@ public class WordBreak {
         }
     }
 
+    // Solution 3:
+    // DP Solution
+    // Time Complexity: O(n^3)
+    // Space Complexity: O(n)
+    // The Worst Case: O(n^4) with the HashSet
+    // The Worst Case with TreeSet: O(n^3 * log(n))
+    public class DPSolution {
+        public boolean wordBreak(String s, List<String> wordDict) {
+            Set<String> wordDictSet = new HashSet<>(wordDict);
+            boolean[] dp = new boolean[s.length() + 1];
+            dp[0] = true;
+            for (int i = 1; i <= s.length(); i++) {
+                for (int j = 0; j < i; j++) {
+                    if (dp[j] && wordDictSet.contains(s.substring(j, i))) {
+                        dp[i] = true;
+                        break;
+                    }
+                }
+            }
+            return dp[s.length()];
+        }
+    }
 
     //leetcode submit region begin(Prohibit modification and deletion)
 
