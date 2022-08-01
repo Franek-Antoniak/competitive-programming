@@ -24,6 +24,12 @@ public class IntegerToEnglishWords {
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+        private final String[] digitToWord = {"", "One ", "Two ", "Three ", "Four ", "Five ", "Six ", "Seven ", "Eight ", "Nine "};
+        private final String[] teenaToWord = {"", "Eleven ", "Twelve ", "Thirteen ", "Fourteen ", "Fifteen ",
+                "Sixteen ", "Seventeen ", "Eighteen ", "Nineteen "};
+        private final String[] counterToPrefixes = {"", "", "", "Hundred ", "Thousand ", "", "Hundred ", "Million ", "", "Hundred ", "Billion "};
+        private final String[] tensToWord = {"", "Ten ", "Twenty ", "Thirty ", "Forty ", "Fifty ", "Sixty ", "Seventy" +
+                " ", "Eighty ", "Ninety "};
 
         public static String reverseWordsInString(String str) {
             StringBuilder stringBuilder = new StringBuilder();
@@ -59,85 +65,28 @@ public class IntegerToEnglishWords {
         private String partNumberToWord(int digit1, int digit2, int digit3, int counter) {
             StringBuilder stringBuilder = new StringBuilder();
             if (digit3 == 0 && digit2 != 0) {
-                stringBuilder.append(counterToPrefixes(counter))
-                        .append(tensToWord(digit2));
+                stringBuilder.append(counterToPrefixes[counter])
+                        .append(tensToWord[digit2]);
             } else if (digit2 == 1) {
-                stringBuilder.append(counterToPrefixes(counter))
-                        .append(teenaToWord(digit3));
+                stringBuilder.append(counterToPrefixes[counter])
+                        .append(teenaToWord[digit3]);
             } else if (digit2 != 0 && digit2 != -1) {
-                stringBuilder.append(counterToPrefixes(counter))
-                        .append(digitToWord(digit3))
-                        .append(tensToWord(digit2));
+                stringBuilder.append(counterToPrefixes[counter])
+                        .append(digitToWord[digit3])
+                        .append(tensToWord[digit2]);
             } else if (digit3 != 0) {
-                stringBuilder.append(counterToPrefixes(counter))
-                        .append(digitToWord(digit3));
+                stringBuilder.append(counterToPrefixes[counter])
+                        .append(digitToWord[digit3]);
             }
             if (digit2 == 0 && digit3 == 0 && digit1 != 0)
-                stringBuilder.append(counterToPrefixes(counter));
+                stringBuilder.append(counterToPrefixes[counter]);
             if (digit1 != -1 && digit1 != 0) {
                 stringBuilder
-                        .append(counterToPrefixes(counter + 2))
-                        .append(digitToWord(digit1));
+                        .append(counterToPrefixes[counter + 2])
+                        .append(digitToWord[digit1]);
             }
             return stringBuilder.toString();
         }
-
-        public String counterToPrefixes(int counter) {
-            return switch (counter) {
-                case 3, 9, 6 -> "Hundred ";
-                case 4 -> "Thousand ";
-                case 7 -> "Million ";
-                case 10 -> "Billion ";
-                default -> "";
-            };
-        }
-
-        public String teenaToWord(int i) {
-            return switch (i) {
-                case 1 -> "Eleven ";
-                case 2 -> "Twelve ";
-                case 3 -> "Thirteen ";
-                case 4 -> "Fourteen ";
-                case 5 -> "Fifteen ";
-                case 6 -> "Sixteen ";
-                case 7 -> "Seventeen ";
-                case 8 -> "Eighteen ";
-                case 9 -> "Nineteen ";
-                default -> "";
-            };
-        }
-
-        public String digitToWord(int digit) {
-            return switch (digit) {
-                case 1 -> "One ";
-                case 2 -> "Two ";
-                case 3 -> "Three ";
-                case 4 -> "Four ";
-                case 5 -> "Five ";
-                case 6 -> "Six ";
-                case 7 -> "Seven ";
-                case 8 -> "Eight ";
-                case 9 -> "Nine ";
-                default -> "";
-            };
-        }
-
-        public String tensToWord(int tens) {
-            return switch (tens) {
-                case 1 -> "Ten ";
-                case 2 -> "Twenty ";
-                case 3 -> "Thirty ";
-                case 4 -> "Forty ";
-                case 5 -> "Fifty ";
-                case 6 -> "Sixty ";
-                case 7 -> "Seventy ";
-                case 8 -> "Eighty ";
-                case 9 -> "Ninety ";
-                default -> "";
-            };
-        }
-
-
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
