@@ -96,8 +96,36 @@ public class WordBreak {
         }
     }
 
-    //leetcode submit region begin(Prohibit modification and deletion)
+    // Solution 4:
+    // DP Solution
+    // Time Complexity: O(n^2 * wordDict.size())
+    // Space Complexity: O(n)
+    // Nice trick with the for each loop in the wordDict instead of using double for loop to iterate over the every
+    // substring of the string.
+    // Leetcode runtime: 3ms faster than 93.39% of Java submissions
+    public class ListDPSolution {
+        public boolean wordBreak(String s, List<String> wordDict) {
+            boolean[] t = new boolean[s.length() + 1];
+            t[0] = true;
+            for (int i = 0; i < s.length(); i++) {
+                if (!t[i]) continue;
+                for (String a : wordDict) {
+                    int len = a.length();
+                    int end = i + len;
+                    if (end > s.length()) continue;
+                    if (t[end]) continue;
+                    if (s.substring(i, end)
+                            .equals(a)) {
+                        t[end] = true;
+                    }
+                }
+            }
+            return t[s.length()];
+        }
+    }
 
+    //leetcode submit region begin(Prohibit modification and deletion)
+    
     //leetcode submit region end(Prohibit modification and deletion)
 
 }
