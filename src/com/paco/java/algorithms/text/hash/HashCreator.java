@@ -33,14 +33,14 @@ public class HashCreator {
     public void fillPowersOfSmallPrime() {
         powersOfSmallPrime = new int[word.length + 1];
         powersOfSmallPrime[0] = 1;
-        for (int i = 1; i <= word.length; i++) {
+        for (int i = 1; i < word.length; i++) {
             powersOfSmallPrime[i] = (powersOfSmallPrime[i - 1] * smallPrimeNumber) % bigPrimeNumber;
         }
     }
 
     public void createHash() {
         hash[0] = 0;
-        for (int i = 1; i < word.length; i++) {
+        for (int i = 1; i <= word.length; i++) {
             hash[i] = (word[i - 1] * powersOfSmallPrime[i - 1] + hash[i - 1]) % bigPrimeNumber;
         }
     }
