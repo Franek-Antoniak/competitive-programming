@@ -54,8 +54,9 @@ public class HashCreator {
         if (length != indexOfOther.second() - indexOfOther.first()) {
             return false;
         }
-        long hashOfOther = (other.hash[indexOfOther.second() + 1] - other.hash[indexOfOther.first()]) % bigPrimeNumber;
-        long hashOfOwn = (hash[indexOfOwn.second() + 1] - hash[indexOfOwn.first()]) % bigPrimeNumber;
+        long hashOfOther =
+                (other.hash[indexOfOther.second() + 1] - other.hash[indexOfOther.first()] + bigPrimeNumber) % bigPrimeNumber;
+        long hashOfOwn = (hash[indexOfOwn.second() + 1] - hash[indexOfOwn.first()] + bigPrimeNumber) % bigPrimeNumber;
         if (indexOfOther.first()
                 .equals(indexOfOwn.first())) {
             return hashOfOther == hashOfOwn;
