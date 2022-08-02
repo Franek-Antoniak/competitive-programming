@@ -40,8 +40,8 @@ public class HashCreator {
 
     public void createHash() {
         hash[0] = 0;
-        for (int i = 1; i <= word.length; i++) {
-            hash[i] = (word[i - 1] * powersOfSmallPrime[i]) % bigPrimeNumber;
+        for (int i = 1; i < word.length; i++) {
+            hash[i] = (word[i - 1] * powersOfSmallPrime[i - 1] + hash[i - 1]) % bigPrimeNumber;
         }
     }
 
@@ -55,11 +55,11 @@ public class HashCreator {
             return false;
         }
         int hashOfOther =
-                (other.hash[indexOfOther.second()] - other.hash[indexOfOther.first() - 1] + other.bigPrimeNumber) % other.bigPrimeNumber;
+                (other.hash[indexOfOther.second() + 1] - other.hash[indexOfOther.first()] + bigPrimeNumber) % bigPrimeNumber;
         int hashOfOwn =
-                (hash[indexOfOwn.second()] - hash[indexOfOwn.first() - 1] + bigPrimeNumber) % bigPrimeNumber;
+                (hash[indexOfOwn.second() + 1] - hash[indexOfOwn.first()] + bigPrimeNumber) % bigPrimeNumber;
         hashOfOther = (hashOfOther * powersOfSmallPrime[indexOfOwn.first()]) % bigPrimeNumber;
-        hashOfOwn = (hashOfOwn * other.powersOfSmallPrime[indexOfOther.first()]) % bigPrimeNumber;
+        hashOfOwn = (hashOfOwn * powersOfSmallPrime[indexOfOther.first()]) % bigPrimeNumber;
         return hashOfOther == hashOfOwn;
     }
 }
