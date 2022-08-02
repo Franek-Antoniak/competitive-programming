@@ -45,22 +45,21 @@ public class HashCreator {
         }
     }
 
-    public int getSmallPrimeNumber() {
-        return smallPrimeNumber;
-    }
-
-
-    public boolean isSubwordsEqual(HashCreator other, Pair<Integer> indexOfOther, Pair<Integer> indexOfOwn) {
-        int length = indexOfOwn.getSecond() - indexOfOwn.getFirst();
-        if (length != indexOfOther.getSecond() - indexOfOther.getFirst()) {
+    public boolean subwordsEquals(HashCreator other, Pair<Integer, Integer> indexOfOther,
+                                   Pair<Integer, Integer> indexOfOwn) {
+        if(other.smallPrimeNumber != smallPrimeNumber) {
+            throw new IllegalArgumentException("The small prime numbers of the two hash creators must be the same");
+        }
+        int length = indexOfOwn.second() - indexOfOwn.first();
+        if (length != indexOfOther.second() - indexOfOther.first()) {
             return false;
         }
         int hashOfOther =
-                (other.hash[indexOfOther.getSecond()] - other.hash[indexOfOther.getFirst() - 1] + other.bigPrimeNumber) % other.bigPrimeNumber;
+                (other.hash[indexOfOther.second()] - other.hash[indexOfOther.first() - 1] + other.bigPrimeNumber) % other.bigPrimeNumber;
         int hashOfOwn =
-                (hash[indexOfOwn.getSecond()] - hash[indexOfOwn.getFirst() - 1] + bigPrimeNumber) % bigPrimeNumber;
-        hashOfOther = (hashOfOther * powersOfSmallPrime[indexOfOwn.getFirst()]) % bigPrimeNumber;
-        hashOfOwn = (hashOfOwn * other.powersOfSmallPrime[indexOfOther.getFirst()]) % bigPrimeNumber;
+                (hash[indexOfOwn.second()] - hash[indexOfOwn.first() - 1] + bigPrimeNumber) % bigPrimeNumber;
+        hashOfOther = (hashOfOther * powersOfSmallPrime[indexOfOwn.first()]) % bigPrimeNumber;
+        hashOfOwn = (hashOfOwn * other.powersOfSmallPrime[indexOfOther.first()]) % bigPrimeNumber;
         return hashOfOther == hashOfOwn;
     }
 }
