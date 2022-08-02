@@ -23,9 +23,17 @@ public class ReverseLinkedList {
      * }
      */
     class Solution {
-//    public ListNode reverseList(ListNode head) {
-//
-//    }
+        public ListNode reverseList(ListNode head) {
+            return reverseNode(null, head);
+        }
+
+        public ListNode reverseNode(ListNode previous, ListNode next) {
+            if (next == null)
+                return previous;
+            ListNode result = reverseNode(next, next.next);
+            next.next = previous;
+            return result;
+        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
