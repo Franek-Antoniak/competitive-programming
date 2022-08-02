@@ -4,14 +4,14 @@ import com.paco.java.structures.Pair;
 
 public class HashCreator {
     private final char[] word;
-    private final int[] hash;
+    private final long[] hash;
     private int smallPrimeNumber;
     private final int bigPrimeNumber = 1000000007;
-    private int[] powersOfSmallPrime;
+    private long[] powersOfSmallPrime;
 
     public HashCreator(String word) {
         this.word = word.toCharArray();
-        this.hash = new int[word.length() + 1];
+        this.hash = new long[word.length() + 1];
         this.smallPrimeNumber = 29;
         fillPowersOfSmallPrime();
         createHash();
@@ -19,7 +19,7 @@ public class HashCreator {
 
     public HashCreator(String word, int smallPrimeNumber) {
         this.word = word.toCharArray();
-        this.hash = new int[word.length() + 1];
+        this.hash = new long[word.length() + 1];
         this.smallPrimeNumber = smallPrimeNumber;
         fillPowersOfSmallPrime();
         createHash();
@@ -30,23 +30,24 @@ public class HashCreator {
         fillPowersOfSmallPrime();
     }
 
-    public void fillPowersOfSmallPrime() {
-        powersOfSmallPrime = new int[word.length + 1];
+    private void fillPowersOfSmallPrime() {
+        powersOfSmallPrime = new long[word.length];
         powersOfSmallPrime[0] = 1;
         for (int i = 1; i < word.length; i++) {
             powersOfSmallPrime[i] = (powersOfSmallPrime[i - 1] * smallPrimeNumber) % bigPrimeNumber;
         }
     }
 
-    public void createHash() {
+    private void createHash() {
         hash[0] = 0;
         for (int i = 1; i <= word.length; i++) {
             hash[i] = (word[i - 1] * powersOfSmallPrime[i - 1] + hash[i - 1]) % bigPrimeNumber;
         }
     }
 
-    public boolean subwordsEquals(HashCreator other, Pair<Integer, Integer> indexOfOther,
-                                   Pair<Integer, Integer> indexOfOwn) {
+    public boolean subwordsEquals(HashCreator other, Pair<Integer, Integer> indexOfOwn,
+                                  Pair<Integer, Integer> indexOfOther
+                                   ) {
         if(other.smallPrimeNumber != smallPrimeNumber) {
             throw new IllegalArgumentException("The small prime numbers of the two hash creators must be the same");
         }
@@ -54,10 +55,10 @@ public class HashCreator {
         if (length != indexOfOther.second() - indexOfOther.first()) {
             return false;
         }
-        int hashOfOther =
-                (other.hash[indexOfOther.second() + 1] - other.hash[indexOfOther.first()] + bigPrimeNumber) % bigPrimeNumber;
-        int hashOfOwn =
-                (hash[indexOfOwn.second() + 1] - hash[indexOfOwn.first()] + bigPrimeNumber) % bigPrimeNumber;
+        long hashOfOther =
+                (other.hash[indexOfOther.second() + 1] - other.hash[indexOfOther.first()]) % bigPrimeNumber;
+        long hashOfOwn =
+                (hash[indexOfOwn.second() + 1] - hash[indexOfOwn.first()]) % bigPrimeNumber;
         hashOfOther = (hashOfOther * powersOfSmallPrime[indexOfOwn.first()]) % bigPrimeNumber;
         hashOfOwn = (hashOfOwn * powersOfSmallPrime[indexOfOther.first()]) % bigPrimeNumber;
         return hashOfOther == hashOfOwn;
