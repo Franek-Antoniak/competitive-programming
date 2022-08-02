@@ -46,19 +46,20 @@ public class HashCreator {
     }
 
     public boolean subwordsEquals(HashCreator other, Pair<Integer, Integer> indexOfOwn,
-                                  Pair<Integer, Integer> indexOfOther
-                                   ) {
-        if(other.smallPrimeNumber != smallPrimeNumber) {
+                                  Pair<Integer, Integer> indexOfOther) {
+        if (other.smallPrimeNumber != smallPrimeNumber) {
             throw new IllegalArgumentException("The small prime numbers of the two hash creators must be the same");
         }
         int length = indexOfOwn.second() - indexOfOwn.first();
         if (length != indexOfOther.second() - indexOfOther.first()) {
             return false;
         }
-        long hashOfOther =
-                (other.hash[indexOfOther.second() + 1] - other.hash[indexOfOther.first()]) % bigPrimeNumber;
-        long hashOfOwn =
-                (hash[indexOfOwn.second() + 1] - hash[indexOfOwn.first()]) % bigPrimeNumber;
+        long hashOfOther = (other.hash[indexOfOther.second() + 1] - other.hash[indexOfOther.first()]) % bigPrimeNumber;
+        long hashOfOwn = (hash[indexOfOwn.second() + 1] - hash[indexOfOwn.first()]) % bigPrimeNumber;
+        if (indexOfOther.first()
+                .equals(indexOfOwn.first())) {
+            return hashOfOther == hashOfOwn;
+        }
         hashOfOther = (hashOfOther * powersOfSmallPrime[indexOfOwn.first()]) % bigPrimeNumber;
         hashOfOwn = (hashOfOwn * powersOfSmallPrime[indexOfOther.first()]) % bigPrimeNumber;
         return hashOfOther == hashOfOwn;
