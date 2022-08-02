@@ -10,22 +10,22 @@
 package com.paco.algorithms.java.leetcode.editor.en;
 
 public class ReverseLinkedList {
-//leetcode submit region begin(Prohibit modification and deletion)
-
-    /**
-     * Definition for singly-linked list.
-     * public class ListNode {
-     * int val;
-     * ListNode next;
-     * ListNode() {}
-     * ListNode(int val) { this.val = val; }
-     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-     * }
-     */
+    //leetcode submit region begin(Prohibit modification and deletion)
+    // Solution 1:
+    // Recursive solution (Time: O(n), Space: O(n))
+    // Beats 100% of submissions
     class Solution {
-//    public ListNode reverseList(ListNode head) {
-//
-//    }
+        public ListNode reverseList(ListNode head) {
+            return reverseNode(null, head);
+        }
+
+        public ListNode reverseNode(ListNode previous, ListNode next) {
+            if (next == null)
+                return previous;
+            ListNode result = reverseNode(next, next.next);
+            next.next = previous;
+            return result;
+        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
