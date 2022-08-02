@@ -124,8 +124,84 @@ public class WordBreak {
         }
     }
 
+    // Solution 5:
+    // DP Solution with Trie
+    // Time Complexity: O(n^2 * d) where d is the length of the longest word in the dictionary
+    // However, it is speeded up by the use of a Trie - we don't need to iterate over the every substring of the "s"
+    // string, due to the use of the Trie.
+    // Space Complexity: O(n + d * x) where d is the length of the longest word in the dictionary and x is the size
+    // of the dictionary.
+    // The trick to make it works is to use a Trie with reverse order of the words in the dictionary.
+    // If we used the normal order of the words in the dictionary, it wouldn't work
+    // on such examples as "aaaaaaa" with words in dictionary "aaaa" and "aaa" because
+    // the algorithm would find only "aaa" and not "aaaa". It would stop entire searching
+    // because it would find "aaa" first.
+    // There isn't faster solution I could find.
+    // The fastest solution: Leetcode runtime: 1ms faster than 99.88% of Java submissions
+    class TrieSolution {
+
+        public boolean wordBreak(String s, List<String> wordDict) {
+            if (s.length() == 0)
+                return false;
+
+            int n = s.length();
+            Node root = new Node();
+            for (String w : wordDict)
+                addWordReverse(w, root);
+
+            boolean[] dp = new boolean[n + 1];
+            dp[0] = true;
+            for (int i = 0; i < n; i++) {
+                Node cur = root;
+                for (int j = i; j >= 0; j--) {
+                    char ch = s.charAt(j);
+                    cur = search(ch, cur);
+                    if (cur == null)
+                        break;
+                    if (cur.isWord && dp[j]) {
+                        dp[i + 1] = true;
+                        break;
+                    }
+                }
+            }
+
+            return dp[n];
+        }
+
+        private void addWordReverse(String word, Node root) {
+            Node n = root;
+            for (int i = word.length() - 1; i >= 0; i--) {
+                char ch = word.charAt(i);
+                int idx = ch - 'a';
+                if (n.children[idx] == null) {
+                    n.children[idx] = new Node();
+                }
+                n = n.children[idx];
+            }
+            n.isWord = true;
+        }
+
+        private Node search(char ch, Node root) {
+            if (root == null) {
+                return null;
+            }
+            int idx = ch - 'a';
+            return root.children[idx];
+        }
+
+        class Node {
+            Node[] children;
+            boolean isWord;
+
+            public Node() {
+                children = new Node[26];
+                isWord = false;
+            }
+        }
+    }
+
+
     //leetcode submit region begin(Prohibit modification and deletion)
-    
     //leetcode submit region end(Prohibit modification and deletion)
 
 }
