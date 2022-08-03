@@ -8,49 +8,41 @@
 
 package com.paco.algorithms.java.leetcode.editor.en;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
 public class MergeTwoSortedLists {
 
-// Iterative Solution
-/*    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode first = new ListNode();
-        ListNode result = first;
-        if(list1 == null) return list2;
-        if(list2 == null) return list1;
-        while (list2 != null && list1 != null) {
-            if (list1.val <= list2.val) {
-                first.next = list1;
-                list1 = list1.next;
-            } else {
-                first.next = list2;
-                list2 = list2.next;
-            }
-            first = first.next;
-        }
-        first.next = (list1 != null) ? list1 : list2;
-        return result.next;
-    }*/
+    // Structure for both of the solutions
+    static class ListNode {
+        int val;
+        ListNode next;
 
+        ListNode() {
+        }
+    }
+
+    // Iterative Solution
+    static class IterativeSolution {
+        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+            ListNode first = new ListNode();
+            ListNode result = first;
+            if (list1 == null) return list2;
+            if (list2 == null) return list1;
+            while (list2 != null && list1 != null) {
+                if (list1.val <= list2.val) {
+                    first.next = list1;
+                    list1 = list1.next;
+                } else {
+                    first.next = list2;
+                    list2 = list2.next;
+                }
+                first = first.next;
+            }
+            first.next = (list1 != null) ? list1 : list2;
+            return result.next;
+        }
+    }
 
     // Recursive Solution
-    //leetcode submit region begin(Prohibit modification and deletion)
-    class Solution {
+    static class RecursiveSolution {
         public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
             if (list1 == null) return list2;
             if (list2 == null) return list1;
@@ -65,6 +57,6 @@ public class MergeTwoSortedLists {
         }
 
     }
+    //leetcode submit region begin(Prohibit modification and deletion)
     //leetcode submit region end(Prohibit modification and deletion)
-
 }
