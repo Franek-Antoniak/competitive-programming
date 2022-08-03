@@ -20,7 +20,7 @@ public class WordBreak {
      * Space Complexity: O(n)
      * The Worst Case & Average Case with TreeSet: O(n^3 * log(n)
      */
-    public class RecursiveSolution {
+    class RecursiveSolution {
         public boolean wordBreak(String s, List<String> wordDict) {
             return wordBreakMemo(s, new HashSet<>(wordDict), 0, new Boolean[s.length()]);
         }
@@ -48,7 +48,7 @@ public class WordBreak {
      * O(n^3 * log(n))
      * Space Complexity: O(n)
      */
-    public class BFSSolution {
+    class BFSSolution {
         public boolean wordBreak(String s, List<String> wordDict) {
             Set<String> wordDictSet = new HashSet<>(wordDict);
             Queue<Integer> queue = new LinkedList<>();
@@ -79,7 +79,7 @@ public class WordBreak {
     // Space Complexity: O(n)
     // The Worst Case: O(n^4) with the HashSet
     // The Worst Case with TreeSet: O(n^3 * log(n))
-    public class DPSolution {
+    class DPSolution {
         public boolean wordBreak(String s, List<String> wordDict) {
             Set<String> wordDictSet = new HashSet<>(wordDict);
             boolean[] dp = new boolean[s.length() + 1];
@@ -103,7 +103,7 @@ public class WordBreak {
     // Nice trick with the for each loop in the wordDict instead of using double for loop to iterate over the every
     // substring of the string.
     // Leetcode runtime: 3ms faster than 93.39% of Java submissions
-    public class ListDPSolution {
+    class ListDPSolution {
         public boolean wordBreak(String s, List<String> wordDict) {
             boolean[] t = new boolean[s.length() + 1];
             t[0] = true;
