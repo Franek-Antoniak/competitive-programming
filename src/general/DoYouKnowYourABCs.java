@@ -11,7 +11,9 @@ import java.util.StringTokenizer;
 /**
  * Topic: Expected Knowledge - Introductory USACO Bronze Problems
  * <p>
- * Do You Know Your ABCs?
+ * USACO 2020 December Contest, Bronze
+ * <p>
+ * Problem 1. Do You Know Your ABCs?
  * <p>
  * Problem URL: <a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=1059">Problem</a>
  * <p>
