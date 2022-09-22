@@ -13,6 +13,7 @@ Solutions to USACO guides and USACO contests
 | Expected Knowledge                      | [Promotion Counting][PromC]        | Without notes              |
 | Expected Knowledge                      | [Do you know Your ABC's][DoYKYABC] | Without notes              |
 | Expected Knowledge                      | [Word Processor][WordPro]          | Solution using Java stream |
+| Expected Knowledge                      | [BucketBridge][BucketB]            | Without notes              |
 
 [BaskOoO]: src/general/BasketBallOneOnOne.java
 [WeiAlg]: src/general/WeirdAlgorithm.java
@@ -23,6 +24,7 @@ Solutions to USACO guides and USACO contests
 [PromC]: src/general/PromotionCounting.java
 [DoYKYABC]: src/general/DoYouKnowYourABCs.java
 [WordPro]: src/general/WordProcessor.java
+[BucketB]: src/general/BucketBridge.java
 
 ### Notes
 * To easy problems there aren't solutions notes
