@@ -32,7 +32,7 @@ Solutions to USACO guides and USACO contests
 
 
 ### Notes
-* To easy problems there aren't solutions notes
+* To easy problems don't have solutions notes
 *  Code written in Java (17* and 11)
 ### Map key
 * \*Code written in Java 17 should be converted to Java 11. For example record have to be converted to class. Intellij can help you with this.
