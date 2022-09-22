@@ -26,6 +26,11 @@ Solutions to USACO guides and USACO contests
 [WordPro]: src/general/WordProcessor.java
 [BucketB]: src/general/BucketBridge.java
 
+#### USACO Bronze:
+| Topic                                   | Problem Name                       | Solution Notes             |
+|-----------------------------------------|------------------------------------|----------------------------|
+
+
 ### Notes
 * To easy problems there aren't solutions notes
 *  Code written in Java (17* and 11)
