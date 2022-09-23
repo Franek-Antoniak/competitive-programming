@@ -18,7 +18,7 @@ Solutions to USACO guides and USACO contests
 
 [BaskOoO]: src/general/BasketBallOneOnOne.java
 [WeiAlg]: src/general/WeirdAlgorithm.java
-[FenceP] : src/general/FencePainting.java
+[FenceP]: src/general/FencePainting.java
 [FenceP]: src/general/FencePainting.java
 [Telep]: src/general/Teleportation.java
 [TeamEx]: src/general/Team.java
