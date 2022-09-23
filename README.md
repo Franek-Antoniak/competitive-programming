@@ -7,6 +7,7 @@ Solutions to USACO guides and USACO contests
 |-----------------------------------------|------------------------------------|----------------------------|
 | Introduction to Competitive Programming | [Basketball One-on-One][BaskOoO]   | Without notes              |
 | Input & Output                          | [Weird Algorithm][WeiAlg]          | Without notes              |
+| Input & Output                          | [Fence Painting][FenceP]           | Without notes              |
 | Expected Knowledge                      | [Teleportation][Telep]             | Without notes              |
 | Expected Knowledge                      | [Team][TeamEx]                     | Without notes              |
 | Expected Knowledge                      | [Soldier and Bananas][SoldierAB]   | Without notes              |
@@ -17,6 +18,7 @@ Solutions to USACO guides and USACO contests
 
 [BaskOoO]: src/general/BasketBallOneOnOne.java
 [WeiAlg]: src/general/WeirdAlgorithm.java
+[FenceP] : src/general/FencePainting.java
 [FenceP]: src/general/FencePainting.java
 [Telep]: src/general/Teleportation.java
 [TeamEx]: src/general/Team.java
