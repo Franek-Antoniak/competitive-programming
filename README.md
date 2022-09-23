@@ -2,7 +2,7 @@
 
 Solutions to USACO guides and USACO contests
 
-#### USACO General:
+### USACO General:
 | Topic                                   | Problem Name                       | Solution Notes             |
 |-----------------------------------------|------------------------------------|----------------------------|
 | Introduction to Competitive Programming | [Basketball One-on-One][BaskOoO]   | Without notes              |
@@ -28,9 +28,14 @@ Solutions to USACO guides and USACO contests
 [WordPro]: src/general/WordProcessor.java
 [BucketB]: src/general/BucketBridge.java
 
-#### USACO Bronze:
-| Topic                                   | Problem Name                       | Solution Notes             |
-|-----------------------------------------|------------------------------------|----------------------------|
+### USACO Bronze:
+| Topic              | Problem Name                  | Solution Notes |
+|--------------------|-------------------------------|----------------|
+| Rectangle Geometry | [Fence Painting][FenceP]      | O(1)           |
+| Rectangle Geometry | [Blocked Billboard][BlockedB] | O(1)           |
+
+[BlockedB]: src/bronze/BlockedBillboard.java
+
 
 
 ### Notes
