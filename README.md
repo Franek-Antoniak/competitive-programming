@@ -29,12 +29,15 @@ Solutions to USACO guides and USACO contests
 [BucketB]: src/general/BucketBridge.java
 
 ### USACO Bronze:
-| Topic              | Problem Name                  | Solution Notes |
-|--------------------|-------------------------------|----------------|
-| Rectangle Geometry | [Fence Painting][FenceP]      | O(1)           |
-| Rectangle Geometry | [Blocked Billboard][BlockedB] | O(1)           |
+| Topic              | Problem Name                  | Solution Notes         |
+|--------------------|-------------------------------|------------------------|
+| Rectangle Geometry | [Fence Painting][FenceP]      | O(1)                   |
+| Rectangle Geometry | [Blocked Billboard][BlockedB] | O(1)                   |
+| Rectangle Geometry | [Square Pasture][SquarePas]   | O(1) with Java Streams |
 
 [BlockedB]: src/bronze/BlockedBillboard.java
+[SquarePas]: src/bronze/SquarePasture.java
+
 
 
 
