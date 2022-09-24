@@ -35,11 +35,13 @@ Solutions to USACO guides and USACO contests
 | Rectangle Geometry | [Blocked Billboard][BlockedB] | O(1)                   |
 | Rectangle Geometry | [Square Pasture][SquarePas]   | O(1) with Java Streams |
 | Rectangle Geometry | [White Sheet][WhiteSheet]     | O(1)                   |
+| Rectangle Geometry | [Two Tables][TwoTables]       | O(1)                   |
 
 
 [BlockedB]: src/bronze/BlockedBillboard.java
 [SquarePas]: src/bronze/SquarePasture.java
 [WhiteSheet]: src/bronze/WhiteSheet.java
+[TwoTables]: src/bronze/TwoTables.java
 
 
 
