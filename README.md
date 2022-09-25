@@ -34,11 +34,15 @@
 | Rectangle Geometry | [Square Pasture][SquarePas]   | O(1) with Java Streams |
 | Rectangle Geometry | [White Sheet][WhiteSheet]     | O(1)                   |
 | Rectangle Geometry | [Two Tables][TwoTables]       | O(1)                   |
+ | Simulation         | [Shell Game][ShellGame]       | O(n)                   |
+
 
 [BlockedB]: src/bronze/BlockedBillboard.java
 [SquarePas]: src/bronze/SquarePasture.java
 [WhiteSheet]: src/bronze/WhiteSheet.java
 [TwoTables]: src/bronze/TwoTables.java
+[ShellGame]: src/bronze/ShellGame.java
+
 
 ### Notes
 * To easy problems don't have solutions notes
