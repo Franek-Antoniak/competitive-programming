@@ -28,16 +28,16 @@
 [BucketB]: src/general/BucketBridge.java
 
 ### USACO Bronze:
-| Topic              | Problem Name                      | Solution Notes               |
-|--------------------|-----------------------------------|------------------------------|
-| Rectangle Geometry | [Blocked Billboard][BlockedB]     | O(1)                         |
-| Rectangle Geometry | [Square Pasture][SquarePas]       | O(1) with Java Streams       |
-| Rectangle Geometry | [White Sheet][WhiteSheet]         | O(1)                         |
-| Rectangle Geometry | [Two Tables][TwoTables]           | O(1)                         |
- | Simulation         | [Shell Game][ShellGame]           | O(n)                         |
-| Simulation         | [Mixing Milk][MixingMilk]         | O(1)                         |
+| Topic              | Problem Name                      | Solution Notes                 |
+|--------------------|-----------------------------------|--------------------------------|
+| Rectangle Geometry | [Blocked Billboard][BlockedB]     | O(1)                           |
+| Rectangle Geometry | [Square Pasture][SquarePas]       | O(1) with Java Streams         |
+| Rectangle Geometry | [White Sheet][WhiteSheet]         | O(1)                           |
+| Rectangle Geometry | [Two Tables][TwoTables]           | O(1)                           |
+ | Simulation         | [Shell Game][ShellGame]           | O(n)                           |
+| Simulation         | [Mixing Milk][MixingMilk]         | O(1)                           |
 | Simulation         | [The Cow-Signal][TheCowSignal]    | O(n\*m\*k^2) with Java Streams |
-| Simulation         | [Speeding Ticket][SpeedingTicket] | O(m + n)                     |
+| Simulation         | [Speeding Ticket][SpeedingTicket] | O(m + n)                       |
 
 
 
