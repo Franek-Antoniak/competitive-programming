@@ -28,13 +28,14 @@
 [BucketB]: src/general/BucketBridge.java
 
 ### USACO Bronze:
-| Topic              | Problem Name                  | Solution Notes         |
-|--------------------|-------------------------------|------------------------|
-| Rectangle Geometry | [Blocked Billboard][BlockedB] | O(1)                   |
-| Rectangle Geometry | [Square Pasture][SquarePas]   | O(1) with Java Streams |
-| Rectangle Geometry | [White Sheet][WhiteSheet]     | O(1)                   |
-| Rectangle Geometry | [Two Tables][TwoTables]       | O(1)                   |
- | Simulation         | [Shell Game][ShellGame]       | O(n)                   |
+| Topic              | Problem Name                   | Solution Notes               |
+|--------------------|--------------------------------|------------------------------|
+| Rectangle Geometry | [Blocked Billboard][BlockedB]  | O(1)                         |
+| Rectangle Geometry | [Square Pasture][SquarePas]    | O(1) with Java Streams       |
+| Rectangle Geometry | [White Sheet][WhiteSheet]      | O(1)                         |
+| Rectangle Geometry | [Two Tables][TwoTables]        | O(1)                         |
+ | Simulation         | [Shell Game][ShellGame]        | O(n)                         |
+| Simulation         | [The Cow-Signal][TheCowSignal] | O(n*m*k^2) with Java Streams |
 
 
 [BlockedB]: src/bronze/BlockedBillboard.java
@@ -42,6 +43,7 @@
 [WhiteSheet]: src/bronze/WhiteSheet.java
 [TwoTables]: src/bronze/TwoTables.java
 [ShellGame]: src/bronze/ShellGame.java
+[TheCowSignal]:src/bronze/TheCowSignal.java
 
 
 ### Notes
