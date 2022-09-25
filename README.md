@@ -35,6 +35,7 @@
 | Rectangle Geometry | [White Sheet][WhiteSheet]      | O(1)                         |
 | Rectangle Geometry | [Two Tables][TwoTables]        | O(1)                         |
  | Simulation         | [Shell Game][ShellGame]        | O(n)                         |
+| Simulation         | [Mixing Milk][MixingMilk]      | O(1)                         |
 | Simulation         | [The Cow-Signal][TheCowSignal] | O(n*m*k^2) with Java Streams |
 
 
@@ -43,6 +44,7 @@
 [WhiteSheet]: src/bronze/WhiteSheet.java
 [TwoTables]: src/bronze/TwoTables.java
 [ShellGame]: src/bronze/ShellGame.java
+[MixingMilk]:src/bronze/MixingMilk.java
 [TheCowSignal]:src/bronze/TheCowSignal.java
 
 
