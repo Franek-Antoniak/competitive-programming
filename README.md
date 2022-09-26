@@ -38,6 +38,8 @@
 | Simulation         | [Mixing Milk][MixingMilk]         | O(1)                           |
 | Simulation         | [The Cow-Signal][TheCowSignal]    | O(n\*m\*k^2) with Java Streams |
 | Simulation         | [Speeding Ticket][SpeedingTicket] | O(m + n)                       |
+| Simulation         | [The Lost Cow][TheLostCow]        | O(1)                           |
+
 
 
 
@@ -49,7 +51,7 @@
 [MixingMilk]:src/bronze/MixingMilk.java
 [TheCowSignal]:src/bronze/TheCowSignal.java
 [SpeedingTicket]:src/bronze/SpeedingTicket.java
-
+[TheLostCow]:src/bronze/TheLostCow.java
 
 ### Notes
 * To easy problems don't have solutions notes
