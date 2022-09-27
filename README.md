@@ -40,6 +40,8 @@
 | Simulation         | [Speeding Ticket][SpeedingTicket]      | O(m + n)                       |
 | Simulation         | [The Lost Cow][TheLostCow]             | O(1)                           |
 | Simulation         | [The Bovine Shuffle][TheBovineShuffle] | O(n)                           |
+| Simulation         | [The Bucket List][TheBucketList]       | O(n) and O(T*N) solutions      |
+
 
 [BlockedB]: src/bronze/BlockedBillboard.java
 [SquarePas]: src/bronze/SquarePasture.java
@@ -51,6 +53,7 @@
 [SpeedingTicket]:src/bronze/SpeedingTicket.java
 [TheLostCow]:src/bronze/TheLostCow.java
 [TheBovineShuffle]:src/bronze/TheBovineShuffle.java
+[TheBucketList]:src/bronze/TheBucketList.java
 
 ### Notes
 * To easy problems don't have solutions notes
