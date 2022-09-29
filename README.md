@@ -42,6 +42,8 @@
 | Simulation         | [The Bovine Shuffle][TheBovineShuffle] | O(n)                           |
 | Simulation         | [The Bucket List][TheBucketList]       | O(n) and O(T*n)                |
 | Simulation         | [Measuring Traffic][MeasuringTraffic]  | O(n)                           |
+| Simulation         | [Circular Barn][CircularBarn]          | O(n)                           |
+
 
 [BlockedB]: src/bronze/BlockedBillboard.java
 [SquarePas]: src/bronze/SquarePasture.java
@@ -55,6 +57,7 @@
 [TheBovineShuffle]:src/bronze/TheBovineShuffle.java
 [TheBucketList]:src/bronze/TheBucketList.java
 [MeasuringTraffic]:src/bronze/MeasuringTraffic.java
+[CircularBarn]:src/bronze/CircularBarn.java
 
 ### Notes
 * To easy problems don't have solutions notes
