@@ -17,38 +17,38 @@ import java.util.Arrays;
  */
 public class TheCowSignal {
 
-    private static void solve() throws IOException {
-        int[] input = Arrays.stream(r.readLine()
-                        .split(" "))
-                .mapToInt(Integer::parseInt)
-                .toArray();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < input[0]; i++) {
-            stringBuilder.append(Arrays.stream(r.readLine()
-                            .split(""))
-                    .map(x -> x.repeat(input[2]))
-                    .reduce(String::concat)
-                    .orElse("Error")
-                    .concat("\n")
-                    .repeat(input[2]));
-        }
-        pw.print(stringBuilder);
-    }
+	private static final PrintWriter pw;
+	private static final BufferedReader r;
 
-    private static final PrintWriter pw;
-    private static final BufferedReader r;
+	static {
+		try {
+			r = new BufferedReader(new FileReader("cowsignal.in"));
+			pw = new PrintWriter("cowsignal.out");
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    static {
-        try {
-            r = new BufferedReader(new FileReader("cowsignal.in"));
-            pw = new PrintWriter("cowsignal.out");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+	private static void solve() throws IOException {
+		int[] input = Arrays.stream(r.readLine()
+						.split(" "))
+				.mapToInt(Integer::parseInt)
+				.toArray();
+		StringBuilder stringBuilder = new StringBuilder();
+		for (int i = 0; i < input[0]; i++) {
+			stringBuilder.append(Arrays.stream(r.readLine()
+							.split(""))
+					.map(x -> x.repeat(input[2]))
+					.reduce(String::concat)
+					.orElse("Error")
+					.concat("\n")
+					.repeat(input[2]));
+		}
+		pw.print(stringBuilder);
+	}
 
-    public static void main(String[] args) throws IOException {
-        solve();
-        pw.close();
-    }
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
+	}
 }

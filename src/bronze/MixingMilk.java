@@ -18,54 +18,54 @@ import java.util.StringTokenizer;
  */
 public class MixingMilk {
 
-    static final class Bucket {
-        int capacity;
-        int milk;
+	private static final PrintWriter pw;
+	private static final BufferedReader r;
 
-        Bucket(int capacity, int milk) {
-            this.capacity = capacity;
-            this.milk = milk;
-        }
-    }
+	static {
+		try {
+			r = new BufferedReader(new FileReader("mixmilk.in"));
+			pw = new PrintWriter("mixmilk.out");
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    private static void simulate(Bucket[] buckets) {
-        for (int i = 0; i < 100; i++)
-            transfer(buckets[i % 3], buckets[(i + 1) % 3]);
-    }
+	private static void simulate(Bucket[] buckets) {
+		for (int i = 0; i < 100; i++)
+			transfer(buckets[i % 3], buckets[(i + 1) % 3]);
+	}
 
-    private static void transfer(Bucket bucket1, Bucket bucket2) {
-        int transfer = Math.min(bucket1.milk, bucket2.capacity - bucket2.milk);
-        bucket2.milk += transfer;
-        bucket1.milk -= transfer;
-    }
+	private static void transfer(Bucket bucket1, Bucket bucket2) {
+		int transfer = Math.min(bucket1.milk, bucket2.capacity - bucket2.milk);
+		bucket2.milk += transfer;
+		bucket1.milk -= transfer;
+	}
 
-    private static void solve() throws IOException {
-        Bucket[] buckets = new Bucket[3];
-        for (int i = 0; i < 3; i++) {
-            StringTokenizer stringTokenizer = new StringTokenizer(r.readLine());
-            buckets[i] = new Bucket(Integer.parseInt(stringTokenizer.nextToken()),
-                    Integer.parseInt(stringTokenizer.nextToken()));
-        }
-        simulate(buckets);
-        Arrays.stream(buckets)
-                .map(x -> x.milk)
-                .forEach(pw::println);
-    }
+	private static void solve() throws IOException {
+		Bucket[] buckets = new Bucket[3];
+		for (int i = 0; i < 3; i++) {
+			StringTokenizer stringTokenizer = new StringTokenizer(r.readLine());
+			buckets[i] = new Bucket(Integer.parseInt(stringTokenizer.nextToken()),
+					Integer.parseInt(stringTokenizer.nextToken()));
+		}
+		simulate(buckets);
+		Arrays.stream(buckets)
+				.map(x -> x.milk)
+				.forEach(pw::println);
+	}
 
-    private static final PrintWriter pw;
-    private static final BufferedReader r;
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
+	}
 
-    static {
-        try {
-            r = new BufferedReader(new FileReader("mixmilk.in"));
-            pw = new PrintWriter("mixmilk.out");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+	static final class Bucket {
+		int capacity;
+		int milk;
 
-    public static void main(String[] args) throws IOException {
-        solve();
-        pw.close();
-    }
+		Bucket(int capacity, int milk) {
+			this.capacity = capacity;
+			this.milk = milk;
+		}
+	}
 }

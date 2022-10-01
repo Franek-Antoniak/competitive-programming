@@ -17,39 +17,39 @@ import java.util.StringTokenizer;
  */
 public class TheLostCow {
 
-    public static int log2(int val) {
-        return 31 - Integer.numberOfLeadingZeros(val);
-    }
+	private static final PrintWriter pw;
+	private static final BufferedReader r;
 
-    private static int solve() throws IOException {
-        StringTokenizer st = new StringTokenizer(r.readLine());
-        int x = Integer.parseInt(st.nextToken()),
-                y = Integer.parseInt(st.nextToken());
-        int len = Math.abs(x - y);
-        int log2 = log2(len);
-        int how_many_steps = (1 << log2) == len ? log2 : log2 + 1;
-        int result = 3 * (1 << how_many_steps);
-        int result1 = (result - 2) - ((result / 3) - len);
-        int result2 = (result - 2) + ((result / 3) + len);
-        if (how_many_steps % 2 == 0)
-            return y > x ? result1 : result2;
-        return y < x ? result1 : result2;
-    }
+	static {
+		try {
+			r = new BufferedReader(new FileReader("lostcow.in"));
+			pw = new PrintWriter("lostcow.out");
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    private static final PrintWriter pw;
-    private static final BufferedReader r;
+	public static int log2(int val) {
+		return 31 - Integer.numberOfLeadingZeros(val);
+	}
 
-    static {
-        try {
-            r = new BufferedReader(new FileReader("lostcow.in"));
-            pw = new PrintWriter("lostcow.out");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+	private static int solve() throws IOException {
+		StringTokenizer st = new StringTokenizer(r.readLine());
+		int x = Integer.parseInt(st.nextToken()),
+				y = Integer.parseInt(st.nextToken());
+		int len = Math.abs(x - y);
+		int log2 = log2(len);
+		int how_many_steps = (1 << log2) == len ? log2 : log2 + 1;
+		int result = 3 * (1 << how_many_steps);
+		int result1 = (result - 2) - ((result / 3) - len);
+		int result2 = (result - 2) + ((result / 3) + len);
+		if (how_many_steps % 2 == 0)
+			return y > x ? result1 : result2;
+		return y < x ? result1 : result2;
+	}
 
-    public static void main(String[] args) throws IOException {
-        pw.print(solve());
-        pw.close();
-    }
+	public static void main(String[] args) throws IOException {
+		pw.print(solve());
+		pw.close();
+	}
 }
