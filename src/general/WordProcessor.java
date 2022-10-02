@@ -18,38 +18,37 @@ import java.util.StringTokenizer;
  */
 public class WordProcessor {
 
-    private static void solve() throws IOException {
-        StringTokenizer stringTokenizer = new StringTokenizer(r.readLine());
-        stringTokenizer.nextToken();
-                int k = Integer.parseInt(stringTokenizer.nextToken());
-        String s = r.readLine();
-        pw.print(Arrays.stream(s.split(" "))
-                .reduce((x, y) -> {
-                    String newString = x.concat(" " + y);
-                    if (newString.replace(" ", "")
-                            .length() <= k)
-                        return newString;
-                    pw.println(x);
-                    return y;
-                })
-                .orElse(""));
-    }
+	private static final PrintWriter pw;
+	private static final BufferedReader r;
 
-    private static final PrintWriter pw;
+	static {
+		try {
+			pw = new PrintWriter("word.out");
+			r = new BufferedReader(new FileReader("word.in"));
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    private static final BufferedReader r;
+	private static void solve() throws IOException {
+		StringTokenizer stringTokenizer = new StringTokenizer(r.readLine());
+		stringTokenizer.nextToken();
+		int k = Integer.parseInt(stringTokenizer.nextToken());
+		String s = r.readLine();
+		pw.print(Arrays.stream(s.split(" "))
+				.reduce((x, y) -> {
+					String newString = x.concat(" " + y);
+					if (newString.replace(" ", "")
+							.length() <= k)
+						return newString;
+					pw.println(x);
+					return y;
+				})
+				.orElse(""));
+	}
 
-    static {
-        try {
-            pw = new PrintWriter("word.out");
-            r = new BufferedReader(new FileReader("word.in"));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public static void main(String[] args) throws IOException {
-        solve();
-        pw.close();
-    }
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
+	}
 }

@@ -13,9 +13,9 @@ import java.util.Scanner;
  * Topic URL: <a href="https://usaco.guide/general/intro-cp?lang=java">Topic</a>
  */
 public class BasketBallOneOnOne {
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String x = input.next();
-        System.out.println(x.charAt(x.length() - 2));
-    }
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String x = input.next();
+		System.out.println(x.charAt(x.length() - 2));
+	}
 }

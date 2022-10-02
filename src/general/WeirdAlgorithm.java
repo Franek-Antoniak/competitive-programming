@@ -17,26 +17,26 @@ import java.util.StringTokenizer;
  * Topic URL: <a href="https://usaco.guide/general/input-output?lang=java">Topic</a>
  */
 public class WeirdAlgorithm {
-    private static final PrintWriter pw = new PrintWriter(System.out);
+	private static final PrintWriter pw = new PrintWriter(System.out);
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(r.readLine());
-        int a = Integer.parseInt(st.nextToken());
-        solve(a);
-        pw.close();
-    }
+	public static void main(String[] args) throws IOException {
+		BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(r.readLine());
+		int a = Integer.parseInt(st.nextToken());
+		solve(a);
+		pw.close();
+	}
 
-    private static void solve(long a) {
-        if (a == 1) {
-            pw.print(1);
-            return;
-        }
-        pw.print(a + " ");
-        if (a % 2 == 1) {
-            solve(a * 3 + 1);
-            return;
-        }
-        solve(a / 2);
-    }
+	private static void solve(long a) {
+		if (a == 1) {
+			pw.print(1);
+			return;
+		}
+		pw.print(a + " ");
+		if (a % 2 == 1) {
+			solve(a * 3 + 1);
+			return;
+		}
+		solve(a / 2);
+	}
 }

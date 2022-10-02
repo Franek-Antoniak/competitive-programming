@@ -21,25 +21,25 @@ import java.util.StringTokenizer;
  */
 public class DoYouKnowYourABCs {
 
-    private static void solve() throws IOException {
-        int[] nums = new int[7];
-        StringTokenizer st = new StringTokenizer(r.readLine());
-        for (int i = 0; i < 7; i++) {
-            nums[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(nums);
-        pw.print(nums[0] + " " + nums[1] + " ");
-        if(nums[0] + nums[1] == nums[2])
-            pw.print(nums[3]);
-        else
-            pw.println(nums[2]);
-    }
+	private static final PrintWriter pw = new PrintWriter(System.out);
+	private static final BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
 
-    private static final PrintWriter pw = new PrintWriter(System.out);
-    private static final BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+	private static void solve() throws IOException {
+		int[] nums = new int[7];
+		StringTokenizer st = new StringTokenizer(r.readLine());
+		for (int i = 0; i < 7; i++) {
+			nums[i] = Integer.parseInt(st.nextToken());
+		}
+		Arrays.sort(nums);
+		pw.print(nums[0] + " " + nums[1] + " ");
+		if (nums[0] + nums[1] == nums[2])
+			pw.print(nums[3]);
+		else
+			pw.println(nums[2]);
+	}
 
-    public static void main(String[] args) throws IOException {
-        solve();
-        pw.close();
-    }
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
+	}
 }

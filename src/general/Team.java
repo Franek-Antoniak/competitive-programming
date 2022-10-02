@@ -18,22 +18,22 @@ import java.util.StringTokenizer;
  */
 public class Team {
 
-    private static int solve() throws IOException {
-        StringTokenizer st = new StringTokenizer(r.readLine());
-        int result =
-                Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken());
-        return result >= 2 ? 1 : 0;
-    }
+	private static final PrintWriter pw = new PrintWriter(System.out);
+	private static final BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
 
-    private static final PrintWriter pw = new PrintWriter(System.out);
-    private static final BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
+	private static int solve() throws IOException {
+		StringTokenizer st = new StringTokenizer(r.readLine());
+		int result =
+				Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken());
+		return result >= 2 ? 1 : 0;
+	}
 
-    public static void main(String[] args) throws IOException {
-        int result = 0, input = Integer.parseInt(new StringTokenizer(r.readLine()).nextToken());
-        for (int i = 0; i < input; i++) {
-            result += solve();
-        }
-        pw.println(result);
-        pw.close();
-    }
+	public static void main(String[] args) throws IOException {
+		int result = 0, input = Integer.parseInt(new StringTokenizer(r.readLine()).nextToken());
+		for (int i = 0; i < input; i++) {
+			result += solve();
+		}
+		pw.println(result);
+		pw.close();
+	}
 }
