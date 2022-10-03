@@ -39,22 +39,23 @@
 
 ### USACO Bronze:
 
-| Topic              | Problem Name                           | Solution Notes                 |
-|--------------------|----------------------------------------|--------------------------------|
-| Rectangle Geometry | [Blocked Billboard][BlockedB]          | O(1)                           |
-| Rectangle Geometry | [Square Pasture][SquarePas]            | O(1) with Java Streams         |
-| Rectangle Geometry | [White Sheet][WhiteSheet]              | O(1)                           |
-| Rectangle Geometry | [Two Tables][TwoTables]                | O(1)                           |
-| Simulation         | [Shell Game][ShellGame]                | O(n)                           |
-| Simulation         | [Mixing Milk][MixingMilk]              | O(1)                           |
-| Simulation         | [The Cow-Signal][TheCowSignal]         | O(n\*m\*k^2) with Java Streams |
-| Simulation         | [Speeding Ticket][SpeedingTicket]      | O(m + n)                       |
-| Simulation         | [The Lost Cow][TheLostCow]             | O(1)                           |
-| Simulation         | [The Bovine Shuffle][TheBovineShuffle] | O(n)                           |
-| Simulation         | [The Bucket List][TheBucketList]       | O(n) and O(T*n)                |
-| Simulation         | [Measuring Traffic][MeasuringTraffic]  | O(n)                           |
-| Simulation         | [Circular Barn][CircularBarn]          | O(n)                           |
-| Simulation         | [Block Game][BlockGame]                | O(n)                           |
+| Topic              | Problem Name                           | Solution Notes                     |
+|--------------------|----------------------------------------|------------------------------------|
+| Rectangle Geometry | [Blocked Billboard][BlockedB]          | O(1)                               |
+| Rectangle Geometry | [Square Pasture][SquarePas]            | O(1) with Java Streams             |
+| Rectangle Geometry | [White Sheet][WhiteSheet]              | O(1)                               |
+| Rectangle Geometry | [Two Tables][TwoTables]                | O(1)                               |
+| Simulation         | [Shell Game][ShellGame]                | O(n)                               |
+| Simulation         | [Mixing Milk][MixingMilk]              | O(1)                               |
+| Simulation         | [The Cow-Signal][TheCowSignal]         | O(n\*m\*k^2) with Java Streams     |
+| Simulation         | [Speeding Ticket][SpeedingTicket]      | O(m + n)                           |
+| Simulation         | [The Lost Cow][TheLostCow]             | O(1)                               |
+| Simulation         | [The Bovine Shuffle][TheBovineShuffle] | O(n)                               |
+| Simulation         | [The Bucket List][TheBucketList]       | O(n) and O(T*n)                    |
+| Simulation         | [Measuring Traffic][MeasuringTraffic]  | O(n)                               |
+| Simulation         | [Circular Barn][CircularBarn]          | O(n)                               |
+| Simulation         | [Block Game][BlockGame]                | O(n)                               |
+| Simulation         | [Team Tic Tac Toe][TeamTicTacToe]      | Too many constants, boring as well |
 
 [BlockedB]: src/bronze/BlockedBillboard.java
 
@@ -83,6 +84,8 @@
 [CircularBarn]:src/bronze/CircularBarn.java
 
 [BlockGame]:src/bronze/BlockGame.java
+
+[TeamTicTacToe]:src/bronze/TeamTicTacToe.java
 
 ### Notes
 
