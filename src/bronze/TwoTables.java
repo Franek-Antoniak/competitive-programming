@@ -22,15 +22,10 @@ public class TwoTables {
 	private static final PrintWriter pw = new PrintWriter(System.out);
 	private static final BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
 
-	private static Triple input() throws IOException {
-		StringTokenizer st = new StringTokenizer(r.readLine());
-		RectInfo rectInfo1 = new RectInfo(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
-		st = new StringTokenizer(r.readLine());
-		Rect rect = new Rect(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()),
-				Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
-		st = new StringTokenizer(r.readLine());
-		RectInfo rectInfo3 = new RectInfo(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
-		return new Triple(rect, rectInfo1, rectInfo3);
+	public static void main(String[] args) throws IOException {
+		int t = Integer.parseInt(r.readLine());
+		while (t-- > 0) solve();
+		pw.close();
 	}
 
 	private static void solve() throws IOException {
@@ -43,21 +38,32 @@ public class TwoTables {
 		int demandWidth = rectInfo3.width - Math.max(rect.x1, rectInfo1.width() - rect.x2);
 		demandWidth = Math.max(demandWidth, 0);
 		boolean heightSol = false, widthSol = false;
-		if (demandHeight <= Math.min(rect.y1, rectInfo1.height() - rect.y2)) heightSol = true;
-		if (demandWidth <= Math.min(rect.x1, rectInfo1.width() - rect.x2)) widthSol = true;
+		if (demandHeight <= Math.min(rect.y1, rectInfo1.height() - rect.y2)) {
+			heightSol = true;
+		}
+		if (demandWidth <= Math.min(rect.x1, rectInfo1.width() - rect.x2)) {
+			widthSol = true;
+		}
 		if (heightSol && widthSol) {
 			pw.println(Math.min(demandHeight, demandWidth));
 		} else if (heightSol) {
 			pw.println(demandHeight);
 		} else if (widthSol) {
 			pw.println(demandWidth);
-		} else pw.println(-1);
+		} else {
+			pw.println(-1);
+		}
 	}
 
-	public static void main(String[] args) throws IOException {
-		int t = Integer.parseInt(r.readLine());
-		while (t-- > 0) solve();
-		pw.close();
+	private static Triple input() throws IOException {
+		StringTokenizer st = new StringTokenizer(r.readLine());
+		RectInfo rectInfo1 = new RectInfo(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+		st = new StringTokenizer(r.readLine());
+		Rect rect = new Rect(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()),
+				Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+		st = new StringTokenizer(r.readLine());
+		RectInfo rectInfo3 = new RectInfo(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+		return new Triple(rect, rectInfo1, rectInfo3);
 	}
 
 	record RectInfo(int width, int height) {

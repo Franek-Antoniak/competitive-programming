@@ -28,6 +28,11 @@ public class SpeedingTicket {
 		}
 	}
 
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
+	}
+
 	private static void solve() throws IOException {
 		StringTokenizer st = new StringTokenizer(r.readLine());
 		Road[] roads = new Road[Integer.parseInt(st.nextToken()) + 1];
@@ -47,10 +52,11 @@ public class SpeedingTicket {
 			while (j < roads.length && isAboveRange) {
 				isAboveRange = inRange(roads[j].where, counter, counter + road.where);
 				isInRange = inRange(counter + road.where, roads[j - 1].where, roads[j].where);
-				if (isAboveRange)
+				if (isAboveRange) {
 					result = Math.max(result, road.speedLimit - roads[j++].speedLimit);
-				else if (isInRange)
+				} else if (isInRange) {
 					result = Math.max(result, road.speedLimit - roads[j].speedLimit);
+				}
 			}
 			counter += road.where;
 		}
@@ -59,11 +65,6 @@ public class SpeedingTicket {
 
 	private static boolean inRange(int what, int range1, int range2) {
 		return range1 < what && what <= range2;
-	}
-
-	public static void main(String[] args) throws IOException {
-		solve();
-		pw.close();
 	}
 
 	record Road(int where, int speedLimit) {

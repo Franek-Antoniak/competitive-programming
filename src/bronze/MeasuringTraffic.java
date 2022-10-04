@@ -19,10 +19,35 @@ public class MeasuringTraffic {
 	private static PrintWriter pw;
 	private static BufferedReader r;
 
-	private static int[] getIntersect(int[] first, int[] second) {
-		int x = Math.max(first[0], second[0]);
-		int y = Math.min(first[1], second[1]);
-		return new int[]{x, y};
+	public static void main(String[] args) throws IOException {
+		initIO();
+		solve();
+		pw.close();
+	}
+
+	private static void initIO() {
+		String fileName = "traffic";
+		try {
+			r = new BufferedReader(new FileReader(fileName + ".in"));
+			pw = new PrintWriter(fileName + ".out");
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private static void solve() throws IOException {
+		int n = Integer.parseInt(r.readLine());
+		Sensor[] sensors = new Sensor[n];
+		for (int i = 0; i < n; i++) {
+			StringTokenizer st = new StringTokenizer(r.readLine());
+			String what = st.nextToken();
+			int[] pair = new int[]{Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())};
+			sensors[i] = new Sensor(what, pair);
+		}
+		int[] result1 = solve(sensors, false);
+		int[] result2 = solve(sensors, true);
+		pw.println(result1[0] + " " + result1[1]);
+		pw.println(result2[0] + " " + result2[1]);
 	}
 
 	private static int[] solve(Sensor[] sensors, boolean b) {
@@ -42,35 +67,10 @@ public class MeasuringTraffic {
 		return result;
 	}
 
-	private static void solve() throws IOException {
-		int n = Integer.parseInt(r.readLine());
-		Sensor[] sensors = new Sensor[n];
-		for (int i = 0; i < n; i++) {
-			StringTokenizer st = new StringTokenizer(r.readLine());
-			String what = st.nextToken();
-			int[] pair = new int[]{Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())};
-			sensors[i] = new Sensor(what, pair);
-		}
-		int[] result1 = solve(sensors, false);
-		int[] result2 = solve(sensors, true);
-		pw.println(result1[0] + " " + result1[1]);
-		pw.println(result2[0] + " " + result2[1]);
-	}
-
-	private static void initIO() {
-		String fileName = "traffic";
-		try {
-			r = new BufferedReader(new FileReader(fileName + ".in"));
-			pw = new PrintWriter(fileName + ".out");
-		} catch (FileNotFoundException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	public static void main(String[] args) throws IOException {
-		initIO();
-		solve();
-		pw.close();
+	private static int[] getIntersect(int[] first, int[] second) {
+		int x = Math.max(first[0], second[0]);
+		int y = Math.min(first[1], second[1]);
+		return new int[]{x, y};
 	}
 
 	static final class Sensor {

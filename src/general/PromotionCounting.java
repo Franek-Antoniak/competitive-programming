@@ -34,18 +34,26 @@ public class PromotionCounting {
 		Pair[] pairs = new Pair[4];
 		for (int i = 0; i < 4; i++) {
 			pairs[i] = new Pair(Integer.parseInt(s.nextToken()), Integer.parseInt(s.nextToken()));
-			if (r.ready()) s = new StringTokenizer(r.readLine());
+			if (r.ready()) {
+				s = new StringTokenizer(r.readLine());
+			}
 		}
 		int newPeople = Arrays.stream(pairs)
-				.map(p -> p.s - p.f)
-				.reduce(0, Integer::sum);
+		                      .map(p -> p.s - p.f)
+		                      .reduce(0, Integer::sum);
 		Pair[] simulation = new Pair[4];
 		simulation[0] = new Pair(pairs[0].f, pairs[0].f + newPeople);
-		for (int i = 1; i < 4; i++)
+		for (int i = 1; i < 4; i++) {
 			simulation[i] = new Pair(pairs[i].f, pairs[i].f + (simulation[i - 1].s - pairs[i - 1].s));
+		}
 		for (int i = 1; i < 4; i++) {
 			pw.println(simulation[i].s - simulation[i].f);
 		}
+	}
+
+	public static void main(String[] args) throws IOException {
+		solve2();
+		pw.close();
 	}
 
 	// The best Solution
@@ -54,16 +62,13 @@ public class PromotionCounting {
 		StringTokenizer s = new StringTokenizer(r.readLine());
 		for (int i = 0; i < 4; i++) {
 			pairs[i] = new Pair(Integer.parseInt(s.nextToken()), Integer.parseInt(s.nextToken()));
-			if (r.ready()) s = new StringTokenizer(r.readLine());
+			if (r.ready()) {
+				s = new StringTokenizer(r.readLine());
+			}
 		}
 		pw.println(pairs[1].s - pairs[1].f + pairs[2].s - pairs[2].f + pairs[3].s - pairs[3].f);
 		pw.println(pairs[2].s - pairs[2].f + pairs[3].s - pairs[3].f);
 		pw.println(pairs[3].s - pairs[3].f);
-	}
-
-	public static void main(String[] args) throws IOException {
-		solve2();
-		pw.close();
 	}
 
 	record Pair(int f, int s) {

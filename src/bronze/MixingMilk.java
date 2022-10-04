@@ -30,15 +30,9 @@ public class MixingMilk {
 		}
 	}
 
-	private static void simulate(Bucket[] buckets) {
-		for (int i = 0; i < 100; i++)
-			transfer(buckets[i % 3], buckets[(i + 1) % 3]);
-	}
-
-	private static void transfer(Bucket bucket1, Bucket bucket2) {
-		int transfer = Math.min(bucket1.milk, bucket2.capacity - bucket2.milk);
-		bucket2.milk += transfer;
-		bucket1.milk -= transfer;
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
 	}
 
 	private static void solve() throws IOException {
@@ -50,13 +44,20 @@ public class MixingMilk {
 		}
 		simulate(buckets);
 		Arrays.stream(buckets)
-				.map(x -> x.milk)
-				.forEach(pw::println);
+		      .map(x -> x.milk)
+		      .forEach(pw::println);
 	}
 
-	public static void main(String[] args) throws IOException {
-		solve();
-		pw.close();
+	private static void simulate(Bucket[] buckets) {
+		for (int i = 0; i < 100; i++) {
+			transfer(buckets[i % 3], buckets[(i + 1) % 3]);
+		}
+	}
+
+	private static void transfer(Bucket bucket1, Bucket bucket2) {
+		int transfer = Math.min(bucket1.milk, bucket2.capacity - bucket2.milk);
+		bucket2.milk += transfer;
+		bucket1.milk -= transfer;
 	}
 
 	static final class Bucket {

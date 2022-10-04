@@ -33,6 +33,12 @@ public class TheBucketList {
 				Integer.parseInt(st.nextToken()));
 	}
 
+	public static void main(String[] args) throws IOException {
+		initIO();
+		new OptimizedSolution().solve();
+		pw.close();
+	}
+
 	private static void initIO() {
 		String fileName = "blist";
 		try {
@@ -41,12 +47,6 @@ public class TheBucketList {
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);
 		}
-	}
-
-	public static void main(String[] args) throws IOException {
-		initIO();
-		new OptimizedSolution().solve();
-		pw.close();
 	}
 
 	static final class Cow {
@@ -69,17 +69,19 @@ public class TheBucketList {
 			Cow[] cows = new Cow[n];
 			int[] demands = new int[1001];
 			IntStream.range(0, n)
-					.forEach((x) -> cows[x] = getCow());
-			for (int i = 0; i < n; i++)
+			         .forEach((x) -> cows[x] = getCow());
+			for (int i = 0; i < n; i++) {
 				paint(demands, cows[i]);
+			}
 			pw.println(Arrays.stream(demands)
-					.max()
-					.getAsInt());
+			                 .max()
+			                 .getAsInt());
 		}
 
 		private void paint(int[] demands, Cow cow) {
-			for (int i = cow.from; i <= cow.to; i++)
+			for (int i = cow.from; i <= cow.to; i++) {
 				demands[i] += cow.buckets;
+			}
 		}
 	}
 
@@ -88,7 +90,7 @@ public class TheBucketList {
 			int n = Integer.parseInt(r.readLine());
 			Cow[] cows = new Cow[n + 1];
 			IntStream.rangeClosed(1, n)
-					.forEach((x) -> cows[x] = getCow());
+			         .forEach((x) -> cows[x] = getCow());
 			int[] start = new int[1001];
 			int[] end = new int[1001];
 			int maxi = 0, temp = 0;
@@ -97,10 +99,12 @@ public class TheBucketList {
 				end[cows[i].to] = i;
 			}
 			for (int i = 1; i <= 1000; i++) {
-				if (start[i] != 0)
+				if (start[i] != 0) {
 					temp += cows[start[i]].buckets;
-				if (end[i] != 0)
+				}
+				if (end[i] != 0) {
 					temp -= cows[end[i]].buckets;
+				}
 				maxi = Math.max(temp, maxi);
 			}
 			pw.print(maxi);

@@ -20,26 +20,31 @@ import java.util.StringTokenizer;
 
 public class BlockGame {
 
-	private static int[] countChars(String word) {
-		int[] freq = new int[26];
-		for (int i = 0; i < word.length(); i++)
-			freq[word.charAt(i) - 'a']++;
-		return freq;
-	}
-
-	private static void addMaxFreq(int[] answer, int[] freq1, int[] freq2) {
-		for (int i = 0; i < answer.length; i++)
-			answer[i] += Math.max(freq1[i], freq2[i]);
-	}
-
 	public static void main(String[] args) throws IOException {
 		try (Kattio io = new Kattio("blocks")) {
 			int n = io.nextInt();
 			int[] answer = new int[26];
-			for (int i = 0; i < n; i++)
+			for (int i = 0; i < n; i++) {
 				addMaxFreq(answer, countChars(io.next()), countChars(io.next()));
-			for (int i : answer) io.println(i);
+			}
+			for (int i : answer) {
+				io.println(i);
+			}
 		}
+	}
+
+	private static void addMaxFreq(int[] answer, int[] freq1, int[] freq2) {
+		for (int i = 0; i < answer.length; i++) {
+			answer[i] += Math.max(freq1[i], freq2[i]);
+		}
+	}
+
+	private static int[] countChars(String word) {
+		int[] freq = new int[26];
+		for (int i = 0; i < word.length(); i++) {
+			freq[word.charAt(i) - 'a']++;
+		}
+		return freq;
 	}
 
 	static class Kattio extends PrintWriter {
@@ -52,19 +57,18 @@ public class BlockGame {
 			r = new BufferedReader(new FileReader(problemName + ".in"));
 		}
 
+		public int nextInt() {
+			return Integer.parseInt(next());
+		}
+
 		// returns null if no more input
 		public String next() {
 			try {
-				while (st == null || !st.hasMoreTokens())
-					st = new StringTokenizer(r.readLine());
+				while (st == null || !st.hasMoreTokens()) st = new StringTokenizer(r.readLine());
 				return st.nextToken();
 			} catch (Exception ignored) {
 			}
 			return null;
-		}
-
-		public int nextInt() {
-			return Integer.parseInt(next());
 		}
 	}
 }

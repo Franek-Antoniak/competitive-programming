@@ -28,6 +28,11 @@ public class BlockedBillboard {
 		}
 	}
 
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
+	}
+
 	private static void solve() throws IOException {
 		Point[][] billboard = new Point[3][2];
 		int result = 0;
@@ -39,18 +44,13 @@ public class BlockedBillboard {
 			}
 		}
 		for (int i = 0; i < 2; i++) {
-			int firstInterLenX = Math.max(Math.min(billboard[2][1].x, billboard[i][1].x) - Math.max(billboard[2][0].x,
-					billboard[i][0].x), 0);
-			int firstInterLenY = Math.max(Math.min(billboard[2][1].y, billboard[i][1].y) - Math.max(billboard[2][0].y,
-					billboard[i][0].y), 0);
+			int firstInterLenX = Math.max(
+					Math.min(billboard[2][1].x, billboard[i][1].x) - Math.max(billboard[2][0].x, billboard[i][0].x), 0);
+			int firstInterLenY = Math.max(
+					Math.min(billboard[2][1].y, billboard[i][1].y) - Math.max(billboard[2][0].y, billboard[i][0].y), 0);
 			result += ((billboard[i][1].x - billboard[i][0].x) * (billboard[i][1].y - billboard[i][0].y)) - firstInterLenX * firstInterLenY;
 		}
 		pw.print(result);
-	}
-
-	public static void main(String[] args) throws IOException {
-		solve();
-		pw.close();
 	}
 
 	record Point(int x, int y) {

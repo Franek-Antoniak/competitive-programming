@@ -19,6 +19,22 @@ public class CircularBarn {
 	private static PrintWriter pw;
 	private static BufferedReader r;
 
+	public static void main(String[] args) throws IOException {
+		initIO();
+		solve();
+		pw.close();
+	}
+
+	private static void initIO() {
+		String fileName = "cbarn";
+		try {
+			r = new BufferedReader(new FileReader(fileName + ".in"));
+			pw = new PrintWriter(fileName + ".out");
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 	private static void solve() throws IOException {
 		int n = Integer.parseInt(r.readLine());
 		int sumToMin = 0, realSum = 0;
@@ -34,21 +50,5 @@ public class CircularBarn {
 			result = Math.min(result, sumToMin);
 		}
 		pw.println(result);
-	}
-
-	private static void initIO() {
-		String fileName = "cbarn";
-		try {
-			r = new BufferedReader(new FileReader(fileName + ".in"));
-			pw = new PrintWriter(fileName + ".out");
-		} catch (FileNotFoundException e) {
-			throw new RuntimeException(e);
-		}
-	}
-
-	public static void main(String[] args) throws IOException {
-		initIO();
-		solve();
-		pw.close();
 	}
 }

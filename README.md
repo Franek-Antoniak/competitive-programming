@@ -57,6 +57,7 @@
 | Simulation         | [Block Game][BlockGame]                | O(n)                                                            |
 | Simulation         | [Team Tic Tac Toe][TeamTicTacToe]      | Too many constants, boring as well                              |
 | Simulation         | [Mowing the Field][MowingTheField]     | O(N * S), there is also solution working for bigger S, N values |
+| Simulation         | [Censoring(Bronze)][Censoring]         | Without notes                                                   |
 
 [BlockedB]: src/bronze/BlockedBillboard.java
 
@@ -89,6 +90,8 @@
 [TeamTicTacToe]:src/bronze/TeamTicTacToe.java
 
 [MowingTheField]:src/bronze/MowingTheField.java
+
+[Censoring]:src/bronze/Censoring.java
 
 ### Notes
 

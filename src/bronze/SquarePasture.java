@@ -29,22 +29,22 @@ public class SquarePasture {
 		}
 	}
 
-	private static void solve() throws IOException {
-		int[] first = Arrays.stream(r.readLine()
-						.split(" "))
-				.mapToInt(Integer::parseInt)
-				.toArray();
-		int[] second = Arrays.stream(r.readLine()
-						.split(" "))
-				.mapToInt(Integer::parseInt)
-				.toArray();
-		long maxLength = Math.max(Math.max(first[2], second[2]) - Math.min(first[0], second[0]),
-				Math.max(first[3], second[3]) - Math.min(first[1], second[1]));
-		pw.print(maxLength * maxLength);
-	}
-
 	public static void main(String[] args) throws IOException {
 		solve();
 		pw.close();
+	}
+
+	private static void solve() throws IOException {
+		int[] first = Arrays.stream(r.readLine()
+		                             .split(" "))
+		                    .mapToInt(Integer::parseInt)
+		                    .toArray();
+		int[] second = Arrays.stream(r.readLine()
+		                              .split(" "))
+		                     .mapToInt(Integer::parseInt)
+		                     .toArray();
+		long maxLength = Math.max(Math.max(first[2], second[2]) - Math.min(first[0], second[0]),
+				Math.max(first[3], second[3]) - Math.min(first[1], second[1]));
+		pw.print(maxLength * maxLength);
 	}
 }

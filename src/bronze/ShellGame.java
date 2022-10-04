@@ -28,31 +28,31 @@ public class ShellGame {
 		}
 	}
 
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
+	}
+
 	private static void solve() throws IOException {
 		int n = Integer.parseInt(r.readLine());
 		int[] tab = {0, 1, 2};
 		int[] result = {0, 0, 0};
 		for (int i = 0; i < n; i++) {
 			int[] temp = Arrays.stream(r.readLine()
-							.split(" "))
-					.mapToInt(Integer::parseInt)
-					.toArray();
+			                            .split(" "))
+			                   .mapToInt(Integer::parseInt)
+			                   .toArray();
 			swap(tab, temp[0] - 1, temp[1] - 1);
 			result[tab[temp[2] - 1]]++;
 		}
 		pw.println(Arrays.stream(result)
-				.max()
-				.getAsInt());
+		                 .max()
+		                 .getAsInt());
 	}
 
 	private static void swap(int[] tab, int i, int j) {
 		int temp = tab[i];
 		tab[i] = tab[j];
 		tab[j] = temp;
-	}
-
-	public static void main(String[] args) throws IOException {
-		solve();
-		pw.close();
 	}
 }
