@@ -35,11 +35,8 @@ public class Teleportation {
 	private static int solve(int a, int b, int c, int d) {
 		int fSol = Math.abs(a - b);
 		int sSol;
-		if (Math.abs(c - a) < Math.abs(d - a)) {
-			sSol = Math.abs(c - a) + Math.abs(d - b);
-		} else {
-			sSol = Math.abs(d - a) + Math.abs(c - b);
-		}
+		if (Math.abs(c - a) < Math.abs(d - a)) sSol = Math.abs(c - a) + Math.abs(d - b);
+		else sSol = Math.abs(d - a) + Math.abs(c - b);
 		return Math.min(fSol, sSol);
 	}
 }

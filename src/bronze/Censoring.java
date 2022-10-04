@@ -3,7 +3,6 @@ package bronze;
 import java.io.*;
 import java.util.StringTokenizer;
 
-
 /**
  * Topic: Simulation
  * <p>
@@ -19,6 +18,19 @@ public class Censoring {
 
 	public static void main(String[] args) throws IOException {
 		Kattio io = new Kattio("censor");
+		String s = io.next(), t = io.next();
+		StringBuilder censored = new StringBuilder();
+		censored.append(s, 0, t.length() - 1);
+		for (int x = t.length() - 1; x < s.length(); x++) {
+			censored.append(s.charAt(x));
+			if (censored.length() >= t.length()) {
+				String check = censored.substring(censored.length() - t.length());
+				if (check.equals(t)) {
+					censored.delete(censored.length() - t.length(), censored.length());
+				}
+			}
+		}
+		io.println(censored);
 		io.close();
 	}
 

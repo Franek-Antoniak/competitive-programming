@@ -28,17 +28,12 @@ public class BucketBridge {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
-		solve();
-		pw.close();
-	}
-
 	private static void solve() throws IOException {
 		char[][] grid = new char[10][10];
 		int xB = 0, yB = 0, xL = 0, yL = 0, xR = 0, yR = 0;
 		for (int i = 0; i < 10; i++) {
 			grid[i] = r.readLine()
-			           .toCharArray();
+					.toCharArray();
 			for (int j = 0; j < 10; j++) {
 				if (grid[i][j] == 'B') {
 					xB = i;
@@ -64,5 +59,10 @@ public class BucketBridge {
 			}
 		}
 		pw.print(Math.abs(xB - xL) + Math.abs(yB - yL) - 1);
+	}
+
+	public static void main(String[] args) throws IOException {
+		solve();
+		pw.close();
 	}
 }
