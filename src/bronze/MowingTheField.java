@@ -77,7 +77,7 @@ public class MowingTheField {
 		}
 	}
 
-	static final class Pair {
+	private static final class Pair {
 
 		private int x;
 		private int y;

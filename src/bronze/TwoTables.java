@@ -66,12 +66,12 @@ public class TwoTables {
 		return new Triple(rect, rectInfo1, rectInfo3);
 	}
 
-	record RectInfo(int width, int height) {
+	private record RectInfo(int width, int height) {
 	}
 
-	record Triple(Rect x, RectInfo y, RectInfo z) {
+	private record Triple(Rect x, RectInfo y, RectInfo z) {
 	}
 
-	record Rect(int x1, int y1, int x2, int y2) {
+	private record Rect(int x1, int y1, int x2, int y2) {
 	}
 }
