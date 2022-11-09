@@ -59,6 +59,8 @@
 | Simulation         | [Mowing the Field][MowingTheField]     | O(N * S), there is also solution working for bigger S, N values |
 | Simulation         | [Censoring(Bronze)][Censoring]         | O(S * T)                                                        |
 | Simulation         | [Milk Measurement][MilkMeasurement]    | Because of using, counting sort - O(n)                          |
+| Simulation         | [Stuck in a Rut][StuckInARut]          | Without notes                                                   |
+
 
 [BlockedB]: src/bronze/BlockedBillboard.java
 
@@ -95,6 +97,8 @@
 [Censoring]:src/bronze/Censoring.java
 
 [MilkMeasurement]:src/bronze/MilkMeasurement.java
+
+[StuckInARut]:src/bronze/StuckInARut.java
 
 ### Notes
 
