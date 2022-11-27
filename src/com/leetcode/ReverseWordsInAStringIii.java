@@ -6,7 +6,7 @@
  * Programming Language: Java
  */
 
-package com.paco.algorithms.java.leetcode.editor.en;
+package com.leetcode;
 
 import java.util.stream.Stream;
 

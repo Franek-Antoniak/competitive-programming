@@ -7,7 +7,7 @@
  */
 
 
-package com.paco.algorithms.java.leetcode.editor.en;
+package com.leetcode;
 
 // Definition for a Node.
 

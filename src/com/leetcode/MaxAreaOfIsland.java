@@ -7,7 +7,7 @@
  */
 
 
-package com.paco.algorithms.java.leetcode.editor.en;
+package com.leetcode;
 
 public class MaxAreaOfIsland {
     //leetcode submit region begin(Prohibit modification and deletion)

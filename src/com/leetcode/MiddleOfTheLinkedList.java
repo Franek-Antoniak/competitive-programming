@@ -7,7 +7,7 @@
  */
 
 // Import libraries with LinkedList ListNode class
-package com.paco.algorithms.java.leetcode.editor.en;
+package com.leetcode;
 
 public class MiddleOfTheLinkedList {
     class ListNode {

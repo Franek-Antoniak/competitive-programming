@@ -7,7 +7,7 @@
  */
 
 
-package com.paco.algorithms.java.leetcode.editor.en;
+package com.leetcode;
 
 import java.util.HashMap;
 import java.util.List;

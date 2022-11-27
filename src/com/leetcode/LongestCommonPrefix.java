@@ -6,7 +6,7 @@
  * Programming Language: Java
  */
 
-package com.paco.algorithms.java.leetcode.editor.en;
+package com.leetcode;
 
 public class LongestCommonPrefix {
     //leetcode submit region begin(Prohibit modification and deletion)
