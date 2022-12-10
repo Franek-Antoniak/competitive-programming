@@ -12,12 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FizzBuzz {
-
-	public static void main(String[] args) {
-		Solution fb = new Solution();
-		System.out.println(fb.fizzBuzz(15));
-	}
-
 	//leetcode submit region begin(Prohibit modification and deletion)
 	static class Solution {
 		public List<String> fizzBuzz(int n) {
