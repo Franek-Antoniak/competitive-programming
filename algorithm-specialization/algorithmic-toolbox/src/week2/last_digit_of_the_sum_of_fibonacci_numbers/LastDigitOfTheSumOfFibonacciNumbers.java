@@ -1,40 +1,43 @@
-package max.pairwise.product;
+package week2.last_digit_of_the_sum_of_fibonacci_numbers;
 
 import java.io.*;
 import java.util.InputMismatchException;
-import java.util.stream.IntStream;
 
-public class MaximumPairwiseProduct {
+public class LastDigitOfTheSumOfFibonacciNumbers {
 	public static void main(String[] args) {
 		Solution.solve();
 	}
 }
 
+
 class Solution {
 	static void solve() {
 		try (FastIO io = new FastIO()) {
-			int n = io.nextInt();
-			int[] numbers = IntStream.range(0, n)
-			                         .map(i -> io.nextInt())
-			                         .toArray();
-			io.println(getMaxPairwiseProduct(numbers));
+			long n = io.nextLong();
+			io.println(getFibonacciSumLastDigit(n));
 		}
 	}
-
-	private static long getMaxPairwiseProduct(int[] numbers) {
-		int max1 = 0;
-		int max2 = 0;
-		for (int number : numbers) {
-			if (number > max1) {
-				max2 = max1;
-				max1 = number;
-			} else if (number > max2) {
-				max2 = number;
-			}
+	// to calculate it we can also use the formula
+	// S(n) = F(n+2) - 1
+	static long getFibonacciSumLastDigit(long n) {
+		int pisanoperiod = 60, M = 10;
+		n = (int) (n % pisanoperiod);
+		if (n <= 2) {
+			return n;
 		}
-		return (long) max1 * max2;
+		long sum = 1;
+		long first = 0;
+		long second = 1;
+		for (long i = 1; i < n; i++) {
+			long temp = (first + second) % M;
+			first = second;
+			second = temp;
+			sum = (sum + second) % M;
+		}
+		return sum;
 	}
 }
+
 
 class FastIO extends PrintWriter {
 	private final InputStream stream;
@@ -98,6 +101,29 @@ class FastIO extends PrintWriter {
 			}
 		}
 		return buf[curChar++];
+	}
+
+	public long nextLong() {
+		int c;
+		do {
+			c = nextByte();
+		} while (c <= ' ');
+
+		int sgn = 1;
+		if (c == '-') {
+			sgn = -1;
+			c = nextByte();
+		}
+
+		long res = 0;
+		do {
+			if (c < '0' || c > '9') {
+				throw new InputMismatchException();
+			}
+			res = 10 * res + c - '0';
+			c = nextByte();
+		} while (c > ' ');
+		return res * sgn;
 	}
 
 	public double nextDouble() {
